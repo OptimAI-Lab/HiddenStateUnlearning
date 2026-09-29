@@ -75,7 +75,7 @@ def stratified_split_by_author(qa_data, val_ratio=0.2, questions_per_author=20, 
 
 def process_model_sequential(model_name, model_path, train_qs, train_as, val_qs, val_as, 
                             tokenizer_dir, base_output_dir, logs_dir, num_layers, 
-                            train_decoder_per_model=True, decoder_cache_dir=None, delete_after=True):
+                            train_decoder_per_model=True, decoder_cache_dir=None, delete_after=False):
   
     gpu_id = 0
     print(f"[GPU {gpu_id}] Initializing Tokenizer...")
@@ -293,7 +293,7 @@ def main():
             num_layers=NUM_LAYERS,
             train_decoder_per_model=TRAIN_DECODER_PER_MODEL,
             decoder_cache_dir=DECODER_CACHE_DIR,
-            delete_after=True
+            delete_after=False
         )
 
 if __name__ == "__main__":
